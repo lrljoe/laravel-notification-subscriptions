@@ -12,8 +12,8 @@ class CreateNotificationSubscriptionsTable extends Migration
             $table->increments('id');
             $table->string('type');
             $table->string('channel');
-            $table->morphs('notifiable');
-            $table->nullableMorphs('model');
+            $table->nullableUuidMorphs('notifiable');
+            $table->nullableUuidMorphs('model');
             $table->timestamp('unsubscribed_at')->nullable();
             $table->timestamps();
         });
